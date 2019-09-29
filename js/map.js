@@ -59,6 +59,7 @@ layer_OSM.addTo(map);
 $.getJSON('./soton_imd.geojson', function (geojson) {
     var layer_IMD = L.choropleth(geojson, {
         valueProperty: 'IMDRank',
+        limits: [1000, 5000, 30000],
         scale: ['red', 'orange', 'yellow'],
         style: {
             color: '#111111', // border color
